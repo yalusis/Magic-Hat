@@ -1,13 +1,13 @@
 import React from 'react';
-import { Text } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import MainDrawerAndRouter from './src/components/navigation/main_drawer_and_router';
 
 
 function App(): React.JSX.Element {
 
   return (
     <SafeAreaProvider>
-      <Text> Hello World </Text>
+      <MainDrawerAndRouter />
     </SafeAreaProvider>
   );
 }
