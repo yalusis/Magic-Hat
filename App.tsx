@@ -1,13 +1,14 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 
 function App(): React.JSX.Element {
 
   return (
-    <View>
+    <SafeAreaProvider>
       <Text> Hello World </Text>
-    </View>
+    </SafeAreaProvider>
   );
 }
 
