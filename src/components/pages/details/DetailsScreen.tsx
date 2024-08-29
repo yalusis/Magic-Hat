@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
-import { DetailsScreenNavigationProp } from '../../../constants/types';
+import { DetailsScreenNavigationProp } from '../../../types/navigationTypes';
 
 interface DetailsScreenProps {
     navigation: DetailsScreenNavigationProp;
 }
 
-function DetailsScreen({ navigation }: DetailsScreenProps) {
+function DetailsScreen({ navigation }: DetailsScreenProps){
   return (
     <View>
       <Text>Details Screen</Text>

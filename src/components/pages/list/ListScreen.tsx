@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
-import { ListScreenNavigationProp } from '../../../constants/types';
+import { ListScreenNavigationProp } from '../../../types/navigationTypes';
 
 interface ListScreenProps {
     navigation: ListScreenNavigationProp;

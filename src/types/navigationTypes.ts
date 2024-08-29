@@ -1,4 +1,3 @@
-// types.ts
 import { StackNavigationProp } from '@react-navigation/stack';
 
 export type ListStackParamList = {

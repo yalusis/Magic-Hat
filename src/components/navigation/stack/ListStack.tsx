@@ -1,17 +1,25 @@
 import * as React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import DetailsScreen from '../../pages/details/DetailsScreen';
 import ListScreen from '../../pages/list/ListScreen';
+import DetailsScreen from '../../pages/details/DetailsScreen';
+import { navigationOptions } from '../../../constants/navigationOptions';
 
 const Stack = createStackNavigator();
 
-function ListStack() {
+export default function ListStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="List" component={ListScreen} />
-      <Stack.Screen name="Details" component={DetailsScreen} />
+      <Stack.Screen
+        name="List Screen"
+        component={ListScreen}
+        options={navigationOptions}
+      />
+      <Stack.Screen
+        name="Details"
+        component={DetailsScreen}
+        options={navigationOptions}
+      />
     </Stack.Navigator>
   );
 }
 
-export default ListStack;

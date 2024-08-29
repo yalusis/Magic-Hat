@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 import HomeStack from './stack/HomeStack';
 import ListStack from './stack/ListStack';
+import { StyleSheet } from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
@@ -14,9 +15,22 @@ export default function MainDrawerAndRouter(): React.ReactNode {
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ color, size }) => {
-            let iconName: string = route.name === 'Home' ? 'home' : 'list';
-
+            let iconName: string = route.name === 'HomeTab' ? 'home' : 'list';
             return <Icon name={iconName} size={size} color={color} />;
+          },
+          tabBarActiveTintColor: 'black',
+          tabBarInactiveTintColor: 'gray',
+          tabBarLabelStyle: {
+            color: 'black',
+          },
+          tabBarItemStyle: {
+            paddingVertical: 5,
+          },
+          tabBarStyle: {
+            borderTopColor: 'black',
+            borderTopWidth: StyleSheet.hairlineWidth,
+            height: 65,
+            paddingTop: 5,
           },
           headerShown: false,
         })}
