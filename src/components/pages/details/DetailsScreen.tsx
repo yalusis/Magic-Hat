@@ -10,10 +10,6 @@ function DetailsScreen({ navigation }: DetailsScreenProps){
   return (
     <View>
       <Text>Details Screen</Text>
-      <Button
-        title="Go to List"
-        onPress={() => navigation.navigate('List')}
-      />
     </View>
   );
 }

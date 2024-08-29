@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, } from 'react-native';
 import { ListScreenNavigationProp } from '../../../types/navigationTypes';
+import Affiliations from '../../affiliations/Affiliations';
 
 interface ListScreenProps {
     navigation: ListScreenNavigationProp;
@@ -9,11 +10,7 @@ interface ListScreenProps {
 function ListScreen({ navigation }: ListScreenProps) {
   return (
     <View>
-      <Text>List Screen</Text>
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
-      />
+      <Affiliations />
     </View>
   );
 }
