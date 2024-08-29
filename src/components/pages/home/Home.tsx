@@ -1,14 +1,25 @@
-import React, { useContext } from 'react';
-import { View, Text, Image } from 'react-native';
+import React, { useCallback, useContext } from 'react';
+import { View, Text, Image, ScrollView, RefreshControl } from 'react-native';
 import { MyContext } from '../../../context/context';
 import Affiliations from '../../affiliations/Affiliations';
 import HouseButtons from './components/HouseButtons/HouseButtons';
 import { styleHome } from './styleHome';
+import { getRandomCharacterData } from '../../../constants/api';
 
-function HomeScreen() {
-  const { allCharacters, updateAffiliations  } = useContext(MyContext);
+function Home() {
+  const { allCharacters, updateAffiliations, addCharacter, removeCharacter } = useContext(MyContext);
 
   const character = allCharacters.length > 0 ? allCharacters[0] : null;
+
+  const onRefresh = useCallback(async () => {
+    if (character) {
+      removeCharacter(character.id);
+    }
+    const newCharacter = await getRandomCharacterData();
+    if (newCharacter) {
+      addCharacter(newCharacter);
+    }
+  }, [addCharacter, character, removeCharacter]);
 
   const handleHouseSelection = (house: string) => {
     if (character) {
@@ -18,7 +29,9 @@ function HomeScreen() {
   };
 
   return (
-    <View style={styleHome.container}>
+    <ScrollView
+      style={styleHome.container}
+      refreshControl={<RefreshControl refreshing={false} onRefresh={onRefresh} />}>
       <Affiliations />
       <View style={styleHome.characterContainer}>
         {character && (
@@ -33,8 +46,8 @@ function HomeScreen() {
         )}
       </View>
       <HouseButtons onButtonPress={handleHouseSelection}/>
-    </View>
+    </ScrollView>
   );
 }
 
-export default HomeScreen;
+export default Home;

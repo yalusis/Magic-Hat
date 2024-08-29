@@ -3,7 +3,7 @@ import { Dimensions, StyleSheet } from 'react-native';
 export const styleHouseButtons = StyleSheet.create({
     container: {
       flex: 1,
-      paddingHorizontal: 30,
+      paddingHorizontal: 25,
       marginTop: 30,
     },
     row: {

@@ -3,8 +3,8 @@ import { StyleSheet } from 'react-native';
 export const styleAffiliations = StyleSheet.create({
     container: {
       flexDirection: 'row',
-      justifyContent: 'space-around',
-      margin: 20,
+      justifyContent: 'space-between',
+      margin: 30,
     },
     box: {
       width: 95,

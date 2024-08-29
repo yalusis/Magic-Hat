@@ -6,7 +6,6 @@ export const styleHome = StyleSheet.create({
       backgroundColor: '#fff',
     },
     characterContainer: {
-      marginTop: 10,
       alignItems: 'center',
     },
     image: {
