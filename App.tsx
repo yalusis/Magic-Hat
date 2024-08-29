@@ -10,22 +10,33 @@ function App(): React.JSX.Element {
 
   useEffect(() => {
     const init = async () => {
-      const characterData = await getRandomCharacterData();
-      addCharacter(characterData);
+      try {
+        const characterData = await getRandomCharacterData();
+        if (characterData) {
+          addCharacter(characterData);
+        } else {
+          console.error('No character data received');
+        }
+      } catch (error) {
+        console.error('Error fetching character data:', error);
+      }
     };
 
     init().finally(async () => {
       await BootSplash.hide({ fade: true });
     });
-  }, [addCharacter]);
+  }, []);
+
   return (
     <SafeAreaProvider>
-      <MyProvider>
-        <MainDrawerAndRouter />
-      </MyProvider>
+      <MainDrawerAndRouter />
     </SafeAreaProvider>
   );
 }
 
-export default App;
+export default () => (
+  <MyProvider>
+    <App />
+  </MyProvider>
+);
 

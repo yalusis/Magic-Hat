@@ -1,11 +1,12 @@
 import React, { ReactNode, createContext, useState } from 'react';
+import { Character } from '../types/character';
 
 interface MyContextType {
-  allCharacters: any[];
+  allCharacters: Character[];
   total: number;
   success: number;
   failed: number;
-  addCharacter: (character: any) => void;
+  addCharacter: (character: Character) => void;
   removeCharacter: (characterID: string) => void;
   updateAffiliations: (isSuccess: boolean) => void;
   resetAffiliations: () => void;
@@ -23,16 +24,16 @@ export const MyContext = createContext<MyContextType>({
 });
 
 export const MyProvider = ({ children }: { children: ReactNode }) => {
-  const [allCharacters, setAllCharacters] = useState<any[]>([]);
+  const [allCharacters, setAllCharacters] = useState<Character[]>([]);
   const [total, setTotal] = useState(0);
   const [success, setSuccess] = useState(0);
   const [failed, setFailed] = useState(0);
 
-  const isCharacterAlreadyAdded = (character: any) => {
+  const isCharacterAlreadyAdded = (character: Character) => {
     return allCharacters.some((item) => item.id === character.id);
   };
 
-  const addCharacter = (character: any) => {
+  const addCharacter = (character: Character) => {
     !isCharacterAlreadyAdded(character) && setAllCharacters((currData) => [character, ...currData]);
   };
 

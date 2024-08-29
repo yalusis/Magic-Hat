@@ -6,6 +6,7 @@ export const getRandomCharacterData = async () => {
     const characters = response.data;
     if (characters.length > 0) {
       const randomIndex = Math.floor(Math.random() * characters.length);
+
       return characters[randomIndex];
     } else {
       throw new Error('No characters found');
