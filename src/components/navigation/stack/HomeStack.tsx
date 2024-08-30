@@ -9,7 +9,7 @@ function HomeStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Home Screen"
+        name="Home"
         component={HomeScreen}
         options={navigationOptions}
       />

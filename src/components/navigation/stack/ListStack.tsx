@@ -10,7 +10,7 @@ export default function ListStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="List Screen"
+        name="List"
         component={ListScreen}
         options={navigationOptions}
       />

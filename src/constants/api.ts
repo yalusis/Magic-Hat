@@ -1,9 +1,10 @@
 import axios from 'axios';
+import { Character } from '../types/character';
 
-export const getRandomCharacterData = async () => {
+export const getRandomCharacterData = async (): Promise<Character | null> => {
   try {
     const response = await axios.get('https://hp-api.onrender.com/api/characters');
-    const characters = response.data;
+    const characters: Character[] = response.data;
     if (characters.length > 0) {
       const randomIndex = Math.floor(Math.random() * characters.length);
 

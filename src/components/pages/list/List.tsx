@@ -1,10 +1,12 @@
 import React, { useState, useContext } from 'react';
-import { View, Text, TextInput, FlatList, TouchableOpacity } from 'react-native';
+import { FlatList } from 'react-native';
 import { MyContext } from '../../../context/context';
 import { ListScreenNavigationProp } from '../../../types/navigationTypes';
 import Affiliations from '../../affiliations/Affiliations';
-import Icon from 'react-native-vector-icons/Ionicons';
 import { styleList } from './styleList';
+import Filter from './components/Filter/Filter';
+import CharacterItem from './components/CharacterItem/CharacterItem';
+import { ScrollView } from 'react-native-gesture-handler';
 
 interface ListScreenProps {
   navigation: ListScreenNavigationProp;
@@ -19,30 +21,21 @@ const List = ({ navigation }: ListScreenProps) => {
   );
 
   return (
-    <View style={styleList.container}>
+    <ScrollView style={styleList.container}>
       <Affiliations />
-      <View style={styleList.searchContainer}>
-        <TextInput
-          style={styleList.searchInput}
-          placeholder="Filter characters..."
-          value={filter}
-          onChangeText={setFilter}
-          placeholderTextColor="black"
-        />
-        <Icon name="search" size={20} color="black" style={styleList.searchIcon} />
-      </View>
+      <Filter filter={filter} setFilter={setFilter}/>
       <FlatList
-        data={filteredCharacters}
+        data={[...filteredCharacters].reverse()}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => navigation.navigate('Details', { character: item })}>
-            <View style={styleList.item}>
-              <Text style={styleList.itemText}>{item.name}</Text>
-            </View>
-          </TouchableOpacity>
+          <CharacterItem
+            character={item}
+            onPress={() => navigation.navigate('Details', { character: item })}
+          />
         )}
+        scrollEnabled={false}
       />
-    </View>
+    </ScrollView>
   );
 };
 
