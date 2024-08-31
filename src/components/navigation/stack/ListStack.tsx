@@ -7,6 +7,7 @@ import { navigationOptions } from '../../../constants/navigationOptions';
 const Stack = createStackNavigator();
 
 export default function ListStack() {
+
   return (
     <Stack.Navigator>
       <Stack.Screen
