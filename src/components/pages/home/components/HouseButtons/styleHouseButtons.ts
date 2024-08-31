@@ -28,6 +28,11 @@ export const styleHouseButtons = StyleSheet.create({
       borderWidth: 2,
       backgroundColor: '#e1e1e1',
     },
+    image: {
+      width: Dimensions.get('window').width / 12,
+      height: Dimensions.get('window').height / 20,
+      marginBottom: 5,
+    },
     buttonText: {
       fontSize: 16,
       fontWeight: 'bold',
