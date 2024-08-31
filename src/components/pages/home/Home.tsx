@@ -4,10 +4,10 @@ import { MyContext } from '../../../context/context';
 import Affiliations from '../../affiliations/Affiliations';
 import HouseButtons from './components/HouseButtons/HouseButtons';
 import { styleHome } from './styleHome';
-import { getRandomCharacterData } from '../../../constants/api';
 import { useRoute } from '@react-navigation/native';
 import { HomeScreenRouteProp } from '../../../types/navigationTypes';
 import { ExtendedCharacter } from '../../../types/extendedCharacter';
+import { getRandomCharacterData } from '../../../api/api';
 
 function Home(): React.JSX.Element {
   const { allCharacters, updateAffiliations, addCharacter } = useContext(MyContext);
@@ -33,10 +33,18 @@ function Home(): React.JSX.Element {
     }
   }, [addCharacter]);
 
-  const handleHouseSelection = (house: string) => {
+  const handleHouseSelection = async(house: string) => {
     if (currentCharacter) {
       const isSuccess = house === currentCharacter.house;
       updateAffiliations(currentCharacter.id, isSuccess);
+
+      if (isSuccess) {
+        const newCharacter = await getRandomCharacterData();
+        if (newCharacter) {
+          const addedCharacter = addCharacter(newCharacter);
+          setCurrentCharacter(addedCharacter);
+        }
+      }
     }
   };
 

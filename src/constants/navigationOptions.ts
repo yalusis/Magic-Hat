@@ -7,6 +7,6 @@ export const navigationOptions: StackNavigationOptions = {
       borderBottomWidth: 1,
     },
     headerTitleStyle: {
-      paddingBottom: 10,
+      paddingVertical: 15,
     },
 };

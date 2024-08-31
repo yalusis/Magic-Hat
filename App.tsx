@@ -2,8 +2,8 @@ import React, { useContext, useEffect } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import MainDrawerAndRouter from './src/components/navigation/main_drawer_and_router';
 import BootSplash from 'react-native-bootsplash';
-import { getRandomCharacterData } from './src/constants/api';
 import { MyContext, MyProvider } from './src/context/context';
+import { getRandomCharacterData } from './src/api/api';
 
 function App(): React.JSX.Element {
   const { addCharacter } = useContext(MyContext);
