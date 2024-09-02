@@ -36,8 +36,20 @@ export default function MainDrawerAndRouter(): React.ReactNode {
           headerShown: false,
         })}
       >
-        <Tab.Screen name="HomeTab" component={HomeStack} />
-        <Tab.Screen name="ListTab" component={ListStack} />
+      <Tab.Screen
+        name="HomeTab"
+        component={HomeStack}
+        options={{
+          tabBarLabel: 'Home',
+        }}
+      />
+      <Tab.Screen
+        name="ListTab"
+        component={ListStack}
+        options={{
+          tabBarLabel: 'List',
+        }}
+      />
       </Tab.Navigator>
     </NavigationContainer>
   );

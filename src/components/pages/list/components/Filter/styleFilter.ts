@@ -12,7 +12,7 @@ export const styleFilter = StyleSheet.create({
     },
     searchInput: {
       flex: 1,
-      height: Dimensions.get('window').height / 14,
+      height: Dimensions.get('window').height / 15,
       paddingHorizontal: 20,
       fontSize: 16,
       color: AppColors.black,

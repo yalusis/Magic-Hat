@@ -9,15 +9,15 @@ export const styleCharacterItem = StyleSheet.create({
       marginHorizontal: 30,
     },
     image: {
-      width: Dimensions.get('window').width / 9,
-      height: Dimensions.get('window').height / 12,
-      marginHorizontal: 15,
+      width: Dimensions.get('window').width / 10,
+      height: Dimensions.get('window').height / 15,
+      marginHorizontal: 10,
     },
     placeholderImage: {
-      width: Dimensions.get('window').width / 9,
-      height: Dimensions.get('window').height / 12,
+      width: Dimensions.get('window').width / 10,
+      height: Dimensions.get('window').height / 15,
       backgroundColor: AppColors.veryLightGray,
-      marginHorizontal: 15,
+      marginHorizontal: 10,
     },
     textContainer: {
       flex: 1,

@@ -9,6 +9,7 @@ import { HomeScreenRouteProp } from '../../../types/navigationTypes';
 import { ExtendedCharacter } from '../../../types/extendedCharacter';
 import { getRandomCharacterData } from '../../../api/api';
 import { CustomText } from '../../core/text/custom_text';
+import PlaceholderImage from '../../placeholder_image/PlaceholderImage';
 
 function Home(): React.JSX.Element {
   const { allCharacters, updateAffiliations, addCharacter } = useContext(MyContext);
@@ -60,7 +61,7 @@ function Home(): React.JSX.Element {
             {currentCharacter.image ? (
               <Image source={{ uri: currentCharacter.image }} style={styleHome.image} resizeMode="contain"/>
             ) : (
-              <View style={styleHome.placeholderImage} />
+              <PlaceholderImage style={styleHome.placeholderImage}/>
             )}
             <CustomText fontSize={'18'} fontWeight={'bold'}>{currentCharacter.name}</CustomText>
           </>

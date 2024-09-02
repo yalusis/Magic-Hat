@@ -6,20 +6,24 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
 import { CustomText } from '../../../../core/text/custom_text';
 import { AppColors } from '../../../../../constants/colors';
+import { NavigationProp } from '../../../../../types/navigationTypes';
+import PlaceholderImage from '../../../../placeholder_image/PlaceholderImage';
 
 interface CharacterItemProps {
   character: ExtendedCharacter;
   onPress: () => void;
 }
 
+
 const CharacterItem = ({ character, onPress }: CharacterItemProps) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<NavigationProp>();
+
   return (
     <Pressable style={styleCharacterItem.container} onPress={onPress}>
       {character.image ? (
         <Image source={{ uri: character.image }} style={styleCharacterItem.image} resizeMode="cover" />
       ) : (
-        <View style={styleCharacterItem.placeholderImage} />
+        <PlaceholderImage style={styleCharacterItem.placeholderImage} />
       )}
       <View style={styleCharacterItem.textContainer}>
         <CustomText fontSize={'14'} fontWeight={'bold'}>{character.name}</CustomText>

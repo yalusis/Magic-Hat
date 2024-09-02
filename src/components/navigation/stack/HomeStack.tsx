@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unstable-nested-components */
 import * as React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import HomeScreen from '../../pages/home/Home';
+import Home from '../../pages/home/Home';
 import { navigationOptions } from '../../../constants/navigationOptions';
 import ResetButton from '../components/ResetButton/ResetButton';
 
@@ -11,8 +11,8 @@ function HomeStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Home Screen"
-        component={HomeScreen}
+        name="Home"
+        component={Home}
         options={{
           ...navigationOptions,
           headerRight: () => (

@@ -8,4 +8,5 @@ export const AppColors = {
     lightGrayAlt: '#dddddd',
     silver: '#c0c0c0',
     green: '#008000',
+    mediumGray: '#959595',
 };

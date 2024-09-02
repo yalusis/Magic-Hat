@@ -8,7 +8,11 @@ export type ListStackParamList = {
 };
 
 export type HomeStackParamList = {
-  'Home Screen': { character?: ExtendedCharacter };
+  'Home': { character?: ExtendedCharacter };
+};
+
+export type RootStackParamList = {
+  'Home': { character: ExtendedCharacter };
 };
 
 export type ListScreenNavigationProp = StackNavigationProp<ListStackParamList, 'List'>;
@@ -16,4 +20,6 @@ export type ListScreenNavigationProp = StackNavigationProp<ListStackParamList, '
 export type DetailsScreenRouteProp = RouteProp<ListStackParamList, 'Details'>;
 export type DetailsScreenNavigationProp = StackNavigationProp<ListStackParamList, 'Details'>;
 
-export type HomeScreenRouteProp = RouteProp<HomeStackParamList, 'Home Screen'>;
+export type HomeScreenRouteProp = RouteProp<HomeStackParamList, 'Home'>;
+
+export type NavigationProp = StackNavigationProp<RootStackParamList, 'Home'>;

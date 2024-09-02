@@ -1,20 +1,20 @@
 /* eslint-disable react/no-unstable-nested-components */
 import * as React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import ListScreen from '../../pages/list/List';
-import DetailsScreen from '../../pages/details/Details';
+import List from '../../pages/list/List';
+import Details from '../../pages/details/Details';
 import { navigationOptions } from '../../../constants/navigationOptions';
 import ResetButton from '../components/ResetButton/ResetButton';
+import { ListStackParamList } from '../../../types/navigationTypes';
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<ListStackParamList>();
 
 export default function ListStack() {
-
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="List Screen"
-        component={ListScreen}
+        name="List"
+        component={List}
         options={{
           ...navigationOptions,
           headerRight: () => (
@@ -24,7 +24,7 @@ export default function ListStack() {
       />
       <Stack.Screen
         name="Details"
-        component={DetailsScreen}
+        component={Details}
         options={navigationOptions}
       />
     </Stack.Navigator>
