@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { AppColors } from '../../constants/colors';
 
 export const styleAffiliations = StyleSheet.create({
     container: {
@@ -11,7 +12,7 @@ export const styleAffiliations = StyleSheet.create({
       height: 80,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#e1e1e1',
+      backgroundColor: AppColors.lightGray,
       borderWidth: 1,
     },
   });

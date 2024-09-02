@@ -4,6 +4,7 @@ import { DetailsScreenNavigationProp, DetailsScreenRouteProp } from '../../../ty
 import { styleDetails } from './styleDetails';
 import { MyContext } from '../../../context/context';
 import { CustomText } from '../../core/text/custom_text';
+import { AppColors } from '../../../constants/colors';
 
 interface DetailsScreenProps {
   navigation: DetailsScreenNavigationProp;
@@ -59,7 +60,7 @@ function Details({ route, navigation }: DetailsScreenProps) {
           </>
         ) : (
           <View style={styleDetails.deniedBlock}>
-            <CustomText color={'red'} fontSize={'20'} fontWeight={'bold'}>ACCESS DENIED</CustomText>
+            <CustomText color={AppColors.red} fontSize={'20'} fontWeight={'bold'}>ACCESS DENIED</CustomText>
           </View>
         )}
       </View>

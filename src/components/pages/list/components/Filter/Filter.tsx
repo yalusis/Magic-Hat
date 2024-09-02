@@ -2,6 +2,7 @@ import React from 'react';
 import { View, TextInput } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { styleFilter } from './styleFilter';
+import { AppColors } from '../../../../../constants/colors';
 
 interface FilterProps {
   filter: string;
@@ -16,9 +17,9 @@ const Filter: React.FC<FilterProps> = ({ filter, setFilter }) => {
         placeholder="Filter characters..."
         value={filter}
         onChangeText={setFilter}
-        placeholderTextColor="black"
+        placeholderTextColor={AppColors.black}
       />
-      <Icon name="search" size={20} color="black" style={styleFilter.searchIcon} />
+      <Icon name="search" size={20} color={AppColors.black} style={styleFilter.searchIcon} />
     </View>
   );
 };

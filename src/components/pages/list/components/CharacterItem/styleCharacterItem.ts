@@ -1,4 +1,5 @@
 import { Dimensions, StyleSheet } from 'react-native';
+import { AppColors } from '../../../../../constants/colors';
 
 export const styleCharacterItem = StyleSheet.create({
     container: {
@@ -15,7 +16,7 @@ export const styleCharacterItem = StyleSheet.create({
     placeholderImage: {
       width: Dimensions.get('window').width / 9,
       height: Dimensions.get('window').height / 12,
-      backgroundColor: '#e0e0e0',
+      backgroundColor: AppColors.veryLightGray,
       marginHorizontal: 15,
     },
     textContainer: {

@@ -5,6 +5,7 @@ import { ExtendedCharacter } from '../../../../../types/extendedCharacter';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
 import { CustomText } from '../../../../core/text/custom_text';
+import { AppColors } from '../../../../../constants/colors';
 
 interface CharacterItemProps {
   character: ExtendedCharacter;
@@ -29,14 +30,14 @@ const CharacterItem = ({ character, onPress }: CharacterItemProps) => {
           <Icon
             name="reload"
             size={36}
-            color="silver"
+            color={AppColors.silver}
           />
         </Pressable>
       )}
       <Icon
         name={character.guessed ? 'checkmark-circle' : 'close-circle-outline'}
         size={36}
-        color={character.guessed ? 'green' : 'red'}
+        color={character.guessed ? AppColors.green : AppColors.red}
       />
     </Pressable>
   );

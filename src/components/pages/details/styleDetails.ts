@@ -1,11 +1,12 @@
 import { Dimensions, StyleSheet } from 'react-native';
+import { AppColors } from '../../../constants/colors';
 
 export const styleDetails = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
     padding: 30,
-    backgroundColor: 'white',
+    backgroundColor: AppColors.white,
   },
   image: {
     width: Dimensions.get('window').width / 2.5,
@@ -15,7 +16,7 @@ export const styleDetails = StyleSheet.create({
   placeholderImage: {
     width: Dimensions.get('window').width / 2.5,
     height: Dimensions.get('window').height / 4,
-    backgroundColor: '#e0e0e0',
+    backgroundColor: AppColors.veryLightGray,
     marginRight: 20,
   },
   details: {
@@ -27,7 +28,7 @@ export const styleDetails = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    borderColor: 'red',
+    borderColor: AppColors.red,
     borderWidth: 5,
   },
 });

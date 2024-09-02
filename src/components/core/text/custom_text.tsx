@@ -1,6 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import { StyleProp, StyleSheet, Text, TextProps, TextStyle } from 'react-native';
+import { AppColors } from '../../../constants/colors';
 
 export interface AppTextInterface extends TextProps {
   fontSize?: fontSizeTypes;
@@ -14,7 +15,7 @@ export const CustomText: React.FC<AppTextInterface> = ({
   fontSize = '18',
   fontWeight = 'regular',
   toUpperCase = false,
-  color = 'black',
+  color = AppColors.black,
   style,
   ...rest
 }) => {

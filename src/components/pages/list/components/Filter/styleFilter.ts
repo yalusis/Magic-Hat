@@ -1,4 +1,5 @@
 import { Dimensions, StyleSheet } from 'react-native';
+import { AppColors } from '../../../../../constants/colors';
 
 export const styleFilter = StyleSheet.create({
     searchContainer: {
@@ -6,7 +7,7 @@ export const styleFilter = StyleSheet.create({
       alignItems: 'center',
       marginBottom: 30,
       marginHorizontal: 30,
-      borderColor: 'black',
+      borderColor: AppColors.black,
       borderWidth: 3,
     },
     searchInput: {
@@ -14,7 +15,7 @@ export const styleFilter = StyleSheet.create({
       height: Dimensions.get('window').height / 14,
       paddingHorizontal: 20,
       fontSize: 16,
-      color: 'black',
+      color: AppColors.black,
       width: '100%',
     },
     searchIcon: {

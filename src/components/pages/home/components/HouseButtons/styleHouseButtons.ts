@@ -1,4 +1,5 @@
 import { Dimensions, StyleSheet } from 'react-native';
+import { AppColors } from '../../../../../constants/colors';
 
 export const styleHouseButtons = StyleSheet.create({
     container: {
@@ -18,7 +19,7 @@ export const styleHouseButtons = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
       borderWidth: 2,
-      backgroundColor: '#e1e1e1',
+      backgroundColor: AppColors.lightGray,
     },
     fullWidthButton: {
       height: Dimensions.get('window').height / 10,
@@ -26,7 +27,7 @@ export const styleHouseButtons = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
       borderWidth: 2,
-      backgroundColor: '#e1e1e1',
+      backgroundColor: AppColors.lightGray,
     },
     image: {
       width: Dimensions.get('window').width / 12,

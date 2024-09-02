@@ -1,9 +1,10 @@
 import { Dimensions, StyleSheet } from 'react-native';
+import { AppColors } from '../../../constants/colors';
 
 export const styleHome = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: AppColors.white,
     },
     characterContainer: {
       alignItems: 'center',
@@ -16,7 +17,7 @@ export const styleHome = StyleSheet.create({
     placeholderImage: {
       width: Dimensions.get('window').width / 2.5,
       height: Dimensions.get('window').height / 4,
-      backgroundColor: '#e0e0e0',
+      backgroundColor: AppColors.veryLightGray,
       marginBottom: 10,
     },
 });
