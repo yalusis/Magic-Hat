@@ -14,12 +14,4 @@ export const styleAffiliations = StyleSheet.create({
       backgroundColor: '#e1e1e1',
       borderWidth: 1,
     },
-    textNumber: {
-      fontSize: 24,
-      fontWeight: 'bold',
-    },
-    text: {
-      fontSize: 14,
-      fontWeight: 'bold',
-    },
   });

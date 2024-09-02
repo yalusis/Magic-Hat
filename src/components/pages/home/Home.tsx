@@ -1,5 +1,5 @@
 import React, { useCallback, useContext, useEffect, useState } from 'react';
-import { View, Text, Image, ScrollView, RefreshControl } from 'react-native';
+import { View, Image, ScrollView, RefreshControl } from 'react-native';
 import { MyContext } from '../../../context/context';
 import Affiliations from '../../affiliations/Affiliations';
 import HouseButtons from './components/HouseButtons/HouseButtons';
@@ -8,6 +8,7 @@ import { useRoute } from '@react-navigation/native';
 import { HomeScreenRouteProp } from '../../../types/navigationTypes';
 import { ExtendedCharacter } from '../../../types/extendedCharacter';
 import { getRandomCharacterData } from '../../../api/api';
+import { CustomText } from '../../core/text/custom_text';
 
 function Home(): React.JSX.Element {
   const { allCharacters, updateAffiliations, addCharacter } = useContext(MyContext);
@@ -61,7 +62,7 @@ function Home(): React.JSX.Element {
             ) : (
               <View style={styleHome.placeholderImage} />
             )}
-            <Text style={styleHome.name}>{currentCharacter.name}</Text>
+            <CustomText fontSize={'18'} fontWeight={'bold'}>{currentCharacter.name}</CustomText>
           </>
         )}
       </View>

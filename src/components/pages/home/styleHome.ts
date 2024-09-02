@@ -19,8 +19,4 @@ export const styleHome = StyleSheet.create({
       backgroundColor: '#e0e0e0',
       marginBottom: 10,
     },
-    name: {
-      fontSize: 18,
-      fontWeight: 'bold',
-    },
 });

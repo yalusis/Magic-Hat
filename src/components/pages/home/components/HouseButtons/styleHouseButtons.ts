@@ -33,8 +33,4 @@ export const styleHouseButtons = StyleSheet.create({
       height: Dimensions.get('window').height / 20,
       marginBottom: 5,
     },
-    buttonText: {
-      fontSize: 16,
-      fontWeight: 'bold',
-    },
 });

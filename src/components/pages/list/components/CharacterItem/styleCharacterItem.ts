@@ -21,15 +21,6 @@ export const styleCharacterItem = StyleSheet.create({
     textContainer: {
       flex: 1,
     },
-    name: {
-      fontSize: 16,
-      fontWeight: 'bold',
-      color: 'black',
-    },
-    attempts: {
-      fontSize: 14,
-      color: '#666',
-    },
     reloadButton: {
       marginHorizontal: 10,
     },

@@ -1,8 +1,9 @@
 import React, { useEffect, useLayoutEffect, useContext, useState } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Image } from 'react-native';
 import { DetailsScreenNavigationProp, DetailsScreenRouteProp } from '../../../types/navigationTypes';
 import { styleDetails } from './styleDetails';
 import { MyContext } from '../../../context/context';
+import { CustomText } from '../../core/text/custom_text';
 
 interface DetailsScreenProps {
   navigation: DetailsScreenNavigationProp;
@@ -39,26 +40,26 @@ function Details({ route, navigation }: DetailsScreenProps) {
       <View>
         {character.guessed ? (
           <>
-            {character.house && <Text style={styleDetails.details}>House: {character.house}</Text>}
-            {character.actor && <Text style={styleDetails.details}>Actor: {character.actor}</Text>}
-            {character.species && <Text style={styleDetails.details}>Species: {character.species}</Text>}
-            {character.ancestry && <Text style={styleDetails.details}>Ancestry: {character.ancestry}</Text>}
-            {character.gender && <Text style={styleDetails.details}>Gender: {character.gender}</Text>}
-            {character.eyeColour && <Text style={styleDetails.details}>Eye Colour: {character.eyeColour}</Text>}
-            {character.hairColour && <Text style={styleDetails.details}>Hair Colour: {character.hairColour}</Text>}
-            {character.hogwartsStaff !== undefined && <Text style={styleDetails.details}>Hogwarts Staff: {character.hogwartsStaff ? 'Yes' : 'No'}</Text>}
-            {character.hogwartsStudent !== undefined && <Text style={styleDetails.details}>Hogwarts Student: {character.hogwartsStudent ? 'Yes' : 'No'}</Text>}
-            {character.patronus && <Text style={styleDetails.details}>Patronus: {character.patronus}</Text>}
-            {character.wand.core && <Text style={styleDetails.details}>Wand Core: {character.wand.core}</Text>}
-            {character.wand.length !== null && <Text style={styleDetails.details}>Wand Length: {character.wand.length ? `${character.wand.length} cm` : 'Unknown'}</Text>}
-            {character.wand.wood && <Text style={styleDetails.details}>Wand Wood: {character.wand.wood}</Text>}
-            {character.wizard !== undefined && <Text style={styleDetails.details}>Wizard: {character.wizard ? 'Yes' : 'No'}</Text>}
-            {character.dateOfBirth && <Text style={styleDetails.details}>Date of Birth: {character.dateOfBirth}</Text>}
-            {character.yearOfBirth !== null && <Text style={styleDetails.details}>Year of Birth: {character.yearOfBirth ? character.yearOfBirth : 'Unknown'}</Text>}
+            {character.house && <CustomText fontSize={'16'} fontWeight={'medium'} style={styleDetails.details}>House: {character.house}</CustomText>}
+            {character.actor && <CustomText fontSize={'16'} fontWeight={'medium'} style={styleDetails.details}>Actor: {character.actor}</CustomText>}
+            {character.species && <CustomText fontSize={'16'} fontWeight={'medium'} style={styleDetails.details}>Species: {character.species}</CustomText>}
+            {character.ancestry && <CustomText fontSize={'16'} fontWeight={'medium'} style={styleDetails.details}>Ancestry: {character.ancestry}</CustomText>}
+            {character.gender && <CustomText fontSize={'16'} fontWeight={'medium'} style={styleDetails.details}>Gender: {character.gender}</CustomText>}
+            {character.eyeColour && <CustomText fontSize={'16'} fontWeight={'medium'} style={styleDetails.details}>Eye Colour: {character.eyeColour}</CustomText>}
+            {character.hairColour && <CustomText fontSize={'16'} fontWeight={'medium'} style={styleDetails.details}>Hair Colour: {character.hairColour}</CustomText>}
+            {character.hogwartsStaff !== undefined && <CustomText fontSize={'16'} fontWeight={'medium'} style={styleDetails.details}>Hogwarts Staff: {character.hogwartsStaff ? 'Yes' : 'No'}</CustomText>}
+            {character.hogwartsStudent !== undefined && <CustomText fontSize={'16'} fontWeight={'medium'} style={styleDetails.details}>Hogwarts Student: {character.hogwartsStudent ? 'Yes' : 'No'}</CustomText>}
+            {character.patronus && <CustomText fontSize={'16'} fontWeight={'medium'} style={styleDetails.details}>Patronus: {character.patronus}</CustomText>}
+            {character.wand.core && <CustomText fontSize={'16'} fontWeight={'medium'} style={styleDetails.details}>Wand Core: {character.wand.core}</CustomText>}
+            {character.wand.length !== null && <CustomText fontSize={'16'} fontWeight={'medium'} style={styleDetails.details}>Wand Length: {character.wand.length ? `${character.wand.length} cm` : 'Unknown'}</CustomText>}
+            {character.wand.wood && <CustomText fontSize={'16'} fontWeight={'medium'} style={styleDetails.details}>Wand Wood: {character.wand.wood}</CustomText>}
+            {character.wizard !== undefined && <CustomText fontSize={'16'} fontWeight={'medium'} style={styleDetails.details}>Wizard: {character.wizard ? 'Yes' : 'No'}</CustomText>}
+            {character.dateOfBirth && <CustomText fontSize={'16'} fontWeight={'medium'} style={styleDetails.details}>Date of Birth: {character.dateOfBirth}</CustomText>}
+            {character.yearOfBirth !== null && <CustomText fontSize={'16'} fontWeight={'medium'} style={styleDetails.details}>Year of Birth: {character.yearOfBirth ? character.yearOfBirth : 'Unknown'}</CustomText>}
           </>
         ) : (
           <View style={styleDetails.deniedBlock}>
-            <Text style={styleDetails.deniedText}>ACCESS DENIED</Text>
+            <CustomText color={'red'} fontSize={'20'} fontWeight={'bold'}>ACCESS DENIED</CustomText>
           </View>
         )}
       </View>

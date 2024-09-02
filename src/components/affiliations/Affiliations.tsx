@@ -1,7 +1,9 @@
+
 import React, { useContext } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import { MyContext } from '../../context/context';
 import { styleAffiliations } from './styleAffiliations';
+import { CustomText } from '../core/text/custom_text';
 
 function Affiliations() {
   const { total, success, failed } = useContext(MyContext);
@@ -9,16 +11,16 @@ function Affiliations() {
   return (
     <View style={styleAffiliations.container}>
       <View style={styleAffiliations.box}>
-        <Text style={styleAffiliations.textNumber}>{total}</Text>
-        <Text style={styleAffiliations.text}>Total</Text>
+        <CustomText fontSize={'24'} fontWeight={'bold'}>{total}</CustomText>
+        <CustomText fontSize={'14'} fontWeight={'medium'}>Total</CustomText>
       </View>
       <View style={styleAffiliations.box}>
-        <Text style={styleAffiliations.textNumber}>{success}</Text>
-        <Text style={styleAffiliations.text}>Success</Text>
+        <CustomText fontSize={'24'} fontWeight={'bold'}>{success}</CustomText>
+        <CustomText fontSize={'14'} fontWeight={'medium'}>Success</CustomText>
       </View>
       <View style={styleAffiliations.box}>
-        <Text style={styleAffiliations.textNumber}>{failed}</Text>
-        <Text style={styleAffiliations.text}>Failed</Text>
+        <CustomText fontSize={'24'} fontWeight={'bold'}>{failed}</CustomText>
+        <CustomText fontSize={'14'} fontWeight={'medium'}>Failed</CustomText>
       </View>
     </View>
   );

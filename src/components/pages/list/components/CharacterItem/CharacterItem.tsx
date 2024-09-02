@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, Text, Image, Pressable } from 'react-native';
+import { View, Image, Pressable } from 'react-native';
 import { styleCharacterItem } from './styleCharacterItem';
 import { ExtendedCharacter } from '../../../../../types/extendedCharacter';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
+import { CustomText } from '../../../../core/text/custom_text';
 
 interface CharacterItemProps {
   character: ExtendedCharacter;
@@ -20,8 +21,8 @@ const CharacterItem = ({ character, onPress }: CharacterItemProps) => {
         <View style={styleCharacterItem.placeholderImage} />
       )}
       <View style={styleCharacterItem.textContainer}>
-        <Text style={styleCharacterItem.name}>{character.name}</Text>
-        <Text style={styleCharacterItem.attempts}>Attempts: {character.attempts}</Text>
+        <CustomText fontSize={'14'} fontWeight={'bold'}>{character.name}</CustomText>
+        <CustomText fontSize={'14'} fontWeight={'medium'}>Attempts: {character.attempts}</CustomText>
       </View>
       {!character.guessed && (
         <Pressable style={styleCharacterItem.reloadButton} onPress={() => {navigation.navigate('Home', { character });}}>

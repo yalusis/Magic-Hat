@@ -19,9 +19,7 @@ export const styleDetails = StyleSheet.create({
     marginRight: 20,
   },
   details: {
-    fontSize: 16,
     marginBottom: 5,
-    color: 'black',
   },
   deniedBlock: {
     height: Dimensions.get('window').height / 12,
@@ -31,11 +29,6 @@ export const styleDetails = StyleSheet.create({
     alignItems: 'center',
     borderColor: 'red',
     borderWidth: 5,
-  },
-  deniedText: {
-    fontSize: 20,
-    color: 'red',
-    fontWeight: 'bold',
   },
 });
 
