@@ -10,7 +10,7 @@ Getting Started
 To run the project locally, follow these steps:
 
 Clone the Repository:
-git clone https://github.com/yourusername/harry-potter-house-guessing-game.git
+git clone https://github.com/yalusis/Magic-Hat.git
 
 Navigate to the Project Directory:
 cd MagicHat
