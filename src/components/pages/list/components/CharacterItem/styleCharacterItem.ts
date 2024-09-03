@@ -25,4 +25,4 @@ export const styleCharacterItem = StyleSheet.create({
     reloadButton: {
       marginHorizontal: 10,
     },
-  });
+});

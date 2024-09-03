@@ -17,7 +17,6 @@ export const styleHome = StyleSheet.create({
     placeholderImage: {
       width: Dimensions.get('window').width / 2.5,
       height: Dimensions.get('window').height / 4,
-      backgroundColor: AppColors.veryLightGray,
       marginBottom: 10,
     },
 });

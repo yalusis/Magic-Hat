@@ -14,7 +14,6 @@ interface CharacterItemProps {
   onPress: () => void;
 }
 
-
 const CharacterItem = ({ character, onPress }: CharacterItemProps) => {
   const navigation = useNavigation<NavigationProp>();
 

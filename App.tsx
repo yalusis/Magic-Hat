@@ -4,6 +4,7 @@ import MainDrawerAndRouter from './src/components/navigation/main_drawer_and_rou
 import BootSplash from 'react-native-bootsplash';
 import { MyContext, MyProvider } from './src/context/context';
 import { getRandomCharacterData } from './src/api/api';
+import { Character } from './src/types/character';
 
 function App(): React.JSX.Element {
   const { addCharacter } = useContext(MyContext);
@@ -11,7 +12,7 @@ function App(): React.JSX.Element {
   useEffect(() => {
     const init = async () => {
       try {
-        const characterData = await getRandomCharacterData();
+        const characterData: Character | null = await getRandomCharacterData();
         if (characterData) {
           addCharacter(characterData);
         } else {
