@@ -19,7 +19,7 @@ const Filter: React.FC<FilterProps> = ({ filter, setFilter }) => {
         onChangeText={setFilter}
         placeholderTextColor={AppColors.black}
       />
-      <Icon name="search" size={20} color={AppColors.black} style={styleFilter.searchIcon} />
+      <Icon name="search" size={24} color={AppColors.black} style={styleFilter.searchIcon} />
     </View>
   );
 };

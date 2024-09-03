@@ -19,6 +19,7 @@ export default function ListStack() {
           headerRight: () => (
             <ResetButton/>
           ),
+          title: 'List Screen'
         }}
       />
       <Stack.Screen

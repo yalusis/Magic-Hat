@@ -17,6 +17,7 @@ function HomeStack() {
           headerRight: () => (
             <ResetButton/>
           ),
+          title: "Home Screen"
         }}
         />
     </Stack.Navigator>
